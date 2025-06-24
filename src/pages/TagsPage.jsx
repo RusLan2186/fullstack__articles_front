@@ -35,11 +35,13 @@ export const TagsPage = () => {
           key={post._id}
           id={post._id}
           title={post.title}
-          imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}` : ''}
+          // imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}` : ''}
+          imageUrl={post.imageUrl ? `https://fullstack-articles-back.onrender.com${post.imageUrl}` : ''}
+
           user={post.user}
           createdAt={post.createdAt}
           viewsCount={post.viewsCount}
-          commentsCount={0} 
+          commentsCount={0}
           tags={post.tags}
         />
       ))}
