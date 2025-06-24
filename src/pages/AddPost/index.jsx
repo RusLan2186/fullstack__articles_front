@@ -27,7 +27,8 @@ export const AddPost = () => {
       const formData = new FormData()
       const file = event.target.files[0]
       formData.append('image', file)
-      const data = await axios.post('/upload', formData)
+      // const data = await axios.post('/upload', formData)
+       const data = await axios.post('https://fullstack-articles-back.onrender.com/upload', formData);
       setImageUrl(data.data.url)
 
     } catch (err) {
@@ -129,7 +130,8 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={handleRemoveImage}>
             Delete
           </Button>
-          <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
+          <img src={`https://fullstack-articles-back.onrender.com${imageUrl}`} alt="Uploaded" />
+          {/* <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" /> */}
         </>
       )}
 

@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4444'
+  // baseURL: 'http://localhost:4444'
+  baseURL: 'https://fullstack-articles-back.onrender.com'
 });
 
 instance.interceptors.request.use((config) => {

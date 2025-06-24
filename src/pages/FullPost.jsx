@@ -62,7 +62,9 @@ export const FullPost = () => {
       <Post
         id={post._id}
         title={post.title}
-        imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}`: ''}
+        // imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}` : ''}
+        imageUrl={post.imageUrl ? `https://fullstack-articles-back.onrender.com${post.imageUrl}` : ''}
+    
         user={post.user}
         createdAt={post.createdAt}
         viewsCount={post.viewsCount}
