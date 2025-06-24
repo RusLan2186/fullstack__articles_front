@@ -28,7 +28,7 @@ export const AddPost = () => {
       const file = event.target.files[0]
       formData.append('image', file)
       // const data = await axios.post('/upload', formData)
-       const data = await axios.post('https://fullstack-articles-back.onrender.com/upload', formData);
+      const data = await axios.post('https://fullstack-articles-back.onrender.com/upload', formData);
       setImageUrl(data.data.url)
 
     } catch (err) {
@@ -59,9 +59,9 @@ export const AddPost = () => {
       };
 
       const { data } = isEditing
-      ? await axios.patch(`/posts/${id}`, fields)
-        : await axios.post('/posts', fields); 
-      
+        ? await axios.patch(`/posts/${id}`, fields)
+        : await axios.post('/posts', fields);
+
       const _id = isEditing ? id : data._id
 
       navigate(`/posts/${_id}`);
@@ -74,17 +74,17 @@ export const AddPost = () => {
     }
   };
 
-  const removeChanges = (event) => { 
+  const removeChanges = (event) => {
     event.preventDefault();
     setTitle('');
     setText('');
     setImageUrl('');
-    setTags('');  
+    setTags('');
   }
 
   useEffect(() => {
     if (id) {
-      axios.get(`/posts/${id}`).then(({data}) => {
+      axios.get(`/posts/${id}`).then(({ data }) => {
         setTitle(data.title);
         setText(data.text);
         setImageUrl(data.imageUrl);
@@ -130,8 +130,9 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={handleRemoveImage}>
             Delete
           </Button>
-          <img src={`https://fullstack-articles-back.onrender.com${imageUrl}`} alt="Uploaded" />
-          {/* <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" /> */}
+          <div style={{  marginTop: 20 }}>
+            <img src={`https://fullstack-articles-back.onrender.com${imageUrl}`} alt="Uploaded" />
+          </div>
         </>
       )}
 
@@ -156,7 +157,7 @@ export const AddPost = () => {
         <SimpleMDE className={styles.editor} value={text} onChange={onChange} options={options} />
         <div className={styles.buttons}>
           <Button type="submit" size="large" variant="contained">
-            { isEditing ? 'Save' : 'Publish'}
+            {isEditing ? 'Save' : 'Publish'}
           </Button>
           <Link to="/">
             <Button onClick={removeChanges} size="large">Cancel</Button>

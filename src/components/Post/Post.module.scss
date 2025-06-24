@@ -30,9 +30,11 @@ $blue: #4361ee;
   width: 100%;
   height: 300px;
   object-fit: cover;
+  object-position: center;
+  padding: 20px;
 
   &Full {
-    // min-height: 300px;
+    object-fit: cover;
     height: 400px;
   }
 }
