@@ -62,7 +62,6 @@ export const Home = () => {
                   key={obj._id}
                   id={obj._id}
                   title={obj.title}
-                  // imageUrl={obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ''}
                   imageUrl={obj.imageUrl ? `https://fullstack-articles-back.onrender.com${obj.imageUrl}` : ''}
                   user={obj.user}
                   createdAt={obj.createdAt}

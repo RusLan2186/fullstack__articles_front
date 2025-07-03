@@ -25,7 +25,7 @@ export const Index = ({ id, onAddComment, user }) => {
     try {
       setIsLoading(true);
 
-      const data = await axios.post(`/posts/${id}/comments`, { text: comment }); // <-- FIX here
+      const data = await axios.post(`/posts/${id}/comments`, { text: comment }); 
       setComment("");
       if (onAddComment) {
         onAddComment(data.data);

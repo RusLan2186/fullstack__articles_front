@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
@@ -62,9 +62,7 @@ export const FullPost = () => {
       <Post
         id={post._id}
         title={post.title}
-        // imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}` : ''}
         imageUrl={post.imageUrl ? `https://fullstack-articles-back.onrender.com${post.imageUrl}` : ''}
-    
         user={post.user}
         createdAt={post.createdAt}
         viewsCount={post.viewsCount}
@@ -75,7 +73,7 @@ export const FullPost = () => {
       </Post>
       <h1>{isErrorComments}</h1>
       <CommentsBlock items={comments} isLoading={isLoadingComments} >
-        <Index id={post._id} user={ post.user} onAddComment={(newComment) => setComments((prev) => [...prev, newComment])}/>
+        <Index id={post._id} user={post.user} onAddComment={(newComment) => setComments((prev) => [...prev, newComment])} />
       </CommentsBlock>
     </>
   );
