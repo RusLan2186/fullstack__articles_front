@@ -130,8 +130,8 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={handleRemoveImage}>
             Delete
           </Button>
-          <div style={{  marginTop: 20 }}>
-            <img src={`https://fullstack-articles-back.onrender.com${imageUrl}`} alt="Uploaded" />
+          <div style={{  marginTop: 20}}>
+            <img  style={{  width:300 }} src={`https://fullstack-articles-back.onrender.com${imageUrl}`} alt="Uploaded" />
           </div>
         </>
       )}
